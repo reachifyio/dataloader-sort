@@ -1,6 +1,7 @@
 # DataLoader Sort
 Sort function for DataLoader to ensure the correct data is returned for the matching keys
 
+### Installation
 `npm i -S @reachify/dataloader-sort`
 
 ### Basic Usage
@@ -13,15 +14,15 @@ const data = [
 ];
 
 const result = sort(keys, data);
-console.log(result);
 
 /**
  * [
- *  { id: 1, value: 'one' },
- *  { id: 2, value: 'two' },
- *  { id: 3, value: 'three' },
+ *   { id: 1, value: 'one' },
+ *   { id: 2, value: 'two' },
+ *   { id: 3, value: 'three' },
  * ];
  */
+console.log(result);
 ```
 
 ### Custom Prop Usage
@@ -34,7 +35,6 @@ const data = [
 ];
 
 const result = sort(keys, data, 'other');
-console.log(result);
 
 /**
  * [
@@ -43,6 +43,7 @@ console.log(result);
  *   { other: 3, value: 'three' },
  * ];
  */
+console.log(result);
 ```
 
 ### Object Key Usage
@@ -63,15 +64,15 @@ const data = [
 ];
 
 const result = sort(keys, data);
-console.log(result);
 
 /**
  * [
- *  { userId: 1, messageId: 3, value: 'woot' },
- *  { userId: 2, messageId: 4, value: 'blue' },
- *  { userId: 3, messageId: 9, value: 'green' },
- *  { userId: 3, messageId: 7, value: 'ya' },
- *  { userId: 1, messageId: 2, value: 'yayy' },
+ *   { userId: 1, messageId: 3, value: 'woot' },
+ *   { userId: 2, messageId: 4, value: 'blue' },
+ *   { userId: 3, messageId: 9, value: 'green' },
+ *   { userId: 3, messageId: 7, value: 'ya' },
+ *   { userId: 1, messageId: 2, value: 'yayy' },
  * ];
  */
+console.log(result);
 ```
