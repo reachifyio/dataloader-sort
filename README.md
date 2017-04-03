@@ -1,5 +1,5 @@
 # DataLoader Sort
-[![npm version](https://badge.fury.io/js/dataloader-sort.svg)](https://badge.fury.io/js/dataloader-sort)
+[![npm version](https://badge.fury.io/js/dataloader-sort.svg)](https://badge.fury.io/js/dataloader-sort) [![Build Status](https://travis-ci.org/reachifyio/dataloader-sort.svg?branch=master)](https://travis-ci.org/reachifyio/dataloader-sort)
 > Sort function for DataLoader to ensure the correct data is returned for the matching keys
 
 ## Installation
