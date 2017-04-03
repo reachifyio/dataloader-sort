@@ -1,5 +1,4 @@
-# DataLoader Sort
-[![npm version](https://badge.fury.io/js/dataloader-sort.svg)](https://badge.fury.io/js/dataloader-sort) [![Build Status](https://travis-ci.org/reachifyio/dataloader-sort.svg?branch=master)](https://travis-ci.org/reachifyio/dataloader-sort) [![Coverage Status](https://coveralls.io/repos/github/reachifyio/dataloader-sort/badge.svg?branch=master)](https://coveralls.io/github/reachifyio/dataloader-sort?branch=master)
+# DataLoader Sort [![npm version](https://badge.fury.io/js/dataloader-sort.svg)](https://badge.fury.io/js/dataloader-sort) [![Build Status](https://travis-ci.org/reachifyio/dataloader-sort.svg?branch=master)](https://travis-ci.org/reachifyio/dataloader-sort) [![Coverage Status](https://coveralls.io/repos/github/reachifyio/dataloader-sort/badge.svg?branch=master)](https://coveralls.io/github/reachifyio/dataloader-sort?branch=master)
 > Sort function for DataLoader to ensure the correct data is returned for the matching keys
 
 ## Installation
