@@ -2,12 +2,12 @@
 [![npm version](https://badge.fury.io/js/dataloader-sort.svg)](https://badge.fury.io/js/dataloader-sort)
 > Sort function for DataLoader to ensure the correct data is returned for the matching keys
 
-*If no match is found it will return `null` for this key*
-
-*includes Flow types*
-
 ## Installation
 `npm i -S @reachify/dataloader-sort`
+
+## Notes
+* If no match is found it will return `null` for this key
+* Includes Flow types
 
 ## Usage
 ### Basic Usage
