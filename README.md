@@ -1,5 +1,7 @@
 # DataLoader Sort
-Sort function for DataLoader to ensure the correct data is returned for the matching keys
+> Sort function for DataLoader to ensure the correct data is returned for the matching keys
+
+*If no match is found it will return `null` for this key*
 
 ### Installation
 `npm i -S @reachify/dataloader-sort`
@@ -10,7 +12,7 @@ const keys = [1, 2, 3];
 const data = [
   { id: 3, value: 'three' },
   { id: 1, value: 'one' },
-  { id: 2, value: 'two' },
+  { id: 4, value: 'four' },
 ];
 
 const result = sort(keys, data);
@@ -18,7 +20,7 @@ const result = sort(keys, data);
 /**
  * [
  *   { id: 1, value: 'one' },
- *   { id: 2, value: 'two' },
+ *   null,
  *   { id: 3, value: 'three' },
  * ];
  */
