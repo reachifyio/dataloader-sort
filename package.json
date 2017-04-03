@@ -1,5 +1,5 @@
 {
-  "name": "@reachify/dataloader-sort",
+  "name": "dataloader-sort",
   "version": "0.0.1",
   "description": "DataLoader Sort",
   "main": "dist/index.js",
