@@ -16,15 +16,15 @@ const data = [
 ];
 
 const result = sort(keys, data);
+```
 
-/**
- * [
- *   { id: 1, value: 'one' },
- *   null,
- *   { id: 3, value: 'three' },
- * ];
- */
-console.log(result);
+#### Output
+```
+[
+  { id: 1, value: 'one' },
+  null,
+  { id: 3, value: 'three' },
+]
 ```
 
 ### Custom Prop Usage
@@ -37,15 +37,15 @@ const data = [
 ];
 
 const result = sort(keys, data, 'other');
+```
 
-/**
- * [
- *   { other: 1, value: 'one' },
- *   { other: 2, value: 'two' },
- *   { other: 3, value: 'three' },
- * ];
- */
-console.log(result);
+#### Output
+```
+[
+  { other: 1, value: 'one' },
+  { other: 2, value: 'two' },
+  { other: 3, value: 'three' },
+]
 ```
 
 ### Object Key Usage
@@ -66,15 +66,15 @@ const data = [
 ];
 
 const result = sort(keys, data);
+```
 
-/**
- * [
- *   { userId: 1, messageId: 3, value: 'woot' },
- *   { userId: 2, messageId: 4, value: 'blue' },
- *   { userId: 3, messageId: 9, value: 'green' },
- *   { userId: 3, messageId: 7, value: 'ya' },
- *   { userId: 1, messageId: 2, value: 'yayy' },
- * ];
- */
-console.log(result);
+#### Output
+```
+[
+  { userId: 1, messageId: 3, value: 'woot' },
+  { userId: 2, messageId: 4, value: 'blue' },
+  { userId: 3, messageId: 9, value: 'green' },
+  { userId: 3, messageId: 7, value: 'ya' },
+  { userId: 1, messageId: 2, value: 'yayy' },
+]
 ```
