@@ -7,7 +7,7 @@
 `npm i -S @reachify/dataloader-sort`
 
 ## Usage
-### Basic
+### Basic Usage
 ```
 const keys = [1, 2, 3];
 const data = [
@@ -19,7 +19,7 @@ const data = [
 const result = sort(keys, data);
 ```
 
-#### Output
+##### Output
 ```
 [
   { id: 1, value: 'one' },
@@ -28,7 +28,7 @@ const result = sort(keys, data);
 ]
 ```
 
-### Custom Prop
+### Custom Prop Usage
 ```
 const keys = [1, 2, 3];
 const data = [
@@ -40,7 +40,7 @@ const data = [
 const result = sort(keys, data, 'other');
 ```
 
-#### Output
+##### Output
 ```
 [
   { other: 1, value: 'one' },
@@ -49,7 +49,7 @@ const result = sort(keys, data, 'other');
 ]
 ```
 
-### Object Keys
+### Object Keys Usage
 ```
 const keys = [
   { userId: 1, messageId: 3 },
@@ -69,7 +69,7 @@ const data = [
 const result = sort(keys, data);
 ```
 
-#### Output
+##### Output
 ```
 [
   { userId: 1, messageId: 3, value: 'woot' },
