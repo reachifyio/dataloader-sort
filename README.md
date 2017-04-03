@@ -3,7 +3,7 @@
 > Sort function for DataLoader to ensure the correct data is returned for the matching keys
 
 ## Installation
-`npm i -S @reachify/dataloader-sort`
+`npm i -S dataloader-sort`
 
 ## Notes
 * If no match is found it will return `null` for this key
