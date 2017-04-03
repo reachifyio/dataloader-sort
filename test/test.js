@@ -24,6 +24,26 @@ describe('dataloaderHelpers', () => {
       done();
     });
 
+    it('should be able to handle repeated keys', done => {
+      const keys = [1, 1, 2, 3];
+      const data = [
+        { id: 3, value: 'three' },
+        { id: 1, value: 'one' },
+        { id: 2, value: 'two' },
+      ];
+      const sortedData = [
+        { id: 1, value: 'one' },
+        { id: 1, value: 'one' },
+        { id: 2, value: 'two' },
+        { id: 3, value: 'three' },
+      ];
+
+      const result = sort(keys, data);
+
+      expect(sortedData).to.deep.equal(result);
+      done();
+    });
+
     it('should sort the data based on the the provided prop field', done => {
       const keys = [1, 2, 3];
       const data = [
@@ -100,6 +120,17 @@ describe('dataloaderHelpers', () => {
         null,
         null,
       ];
+
+      const result = sort(keys, data);
+
+      expect(sortedData).to.deep.equal(result);
+      done();
+    });
+
+    it('should return empty array if keys is empty', done => {
+      const keys = [];
+      const data = [{ id: 1 }];
+      const sortedData = [];
 
       const result = sort(keys, data);
 
