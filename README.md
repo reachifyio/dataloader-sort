@@ -12,6 +12,8 @@
 ## Usage
 ### Basic Usage
 ```
+import sort from 'dataloader-sort';
+
 const keys = [1, 2, 3];
 const data = [
   { id: 3, value: 'three' },
