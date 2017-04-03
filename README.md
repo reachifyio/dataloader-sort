@@ -3,10 +3,11 @@
 
 *If no match is found it will return `null` for this key*
 
-### Installation
+## Installation
 `npm i -S @reachify/dataloader-sort`
 
-### Basic Usage
+## Usage
+### Basic
 ```
 const keys = [1, 2, 3];
 const data = [
@@ -27,7 +28,7 @@ const result = sort(keys, data);
 ]
 ```
 
-### Custom Prop Usage
+### Custom Prop
 ```
 const keys = [1, 2, 3];
 const data = [
@@ -48,7 +49,7 @@ const result = sort(keys, data, 'other');
 ]
 ```
 
-### Object Key Usage
+### Object Keys
 ```
 const keys = [
   { userId: 1, messageId: 3 },
