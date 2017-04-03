@@ -1,11 +1,11 @@
 import { expect } from 'chai';
 import { describe, it } from 'mocha';
 
-import { sort } from '../src';
+import sort from '../src';
 
 describe('dataloaderHelpers', () => {
   describe('sort', () => {
-    it('should sort the data based on id field by default', done => {
+    it('should sort the data based on id field by default using number keys', done => {
       const keys = [1, 2, 3];
       const data = [
         { id: 3, value: 'three' },
@@ -16,6 +16,25 @@ describe('dataloaderHelpers', () => {
         { id: 1, value: 'one' },
         { id: 2, value: 'two' },
         { id: 3, value: 'three' },
+      ];
+
+      const result = sort(keys, data);
+
+      expect(sortedData).to.deep.equal(result);
+      done();
+    });
+
+    it('should be able to handle keys which are strings', done => {
+      const keys = ['1', '2', '3'];
+      const data = [
+        { id: '3', value: 'three' },
+        { id: '1', value: 'one' },
+        { id: '2', value: 'two' },
+      ];
+      const sortedData = [
+        { id: '1', value: 'one' },
+        { id: '2', value: 'two' },
+        { id: '3', value: 'three' },
       ];
 
       const result = sort(keys, data);

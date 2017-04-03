@@ -1,3 +1,5 @@
+// @flow
+
 const matchesObjectFields = (data : Object, check : Object) : boolean => {
   let match = true;
   Object.keys(check).forEach(key => {
@@ -28,6 +30,4 @@ const sort = <Data: { id?: number }>(
   });
 };
 
-export {
-  sort,
-};
+export default sort;
