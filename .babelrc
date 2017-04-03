@@ -1,0 +1,13 @@
+{
+  "plugins": [
+    "syntax-flow",
+    "tcomb",
+    "transform-flow-strip-types",
+    "transform-decorators-legacy",
+    ["transform-runtime", {
+      "polyfill": false,
+      "regenerator": true
+    }]
+  ],
+  "presets": ["flow", "es2015", "stage-0", "stage-2"]
+}
