@@ -7,11 +7,11 @@ const getMapKey = (data : Object, keyObject : Object) : string => {
   return JSON.stringify(filteredData);
 };
 
-const sort = <Data: { id?: number }>(
+const sort = (
   keys: (number | string | Object)[],
-  data: Data[],
+  data: Object[],
   prop?: string = 'id',
-) : (Data | null)[] => {
+) : (Object | null)[] => {
   if (!keys.length) return [];
   if (!data.length) return new Array(keys.length).fill(null);
 
