@@ -1,11 +1,10 @@
 // @flow
-
-const matchesObjectFields = (data : Object, check : Object) : boolean => {
-  let match = true;
-  Object.keys(check).forEach(key => {
-    if (check[key] !== data[key]) match = false;
-  });
-  return match;
+const getMapKey = (data : Object, keyObject : Object) : string => {
+  const filteredData = {};
+  const keys = Object.keys(keyObject);
+  keys.sort();
+  keys.forEach(key => (filteredData[key] = data[key]));
+  return JSON.stringify(filteredData);
 };
 
 const sort = <Data: { id?: number }>(
@@ -16,17 +15,23 @@ const sort = <Data: { id?: number }>(
   if (!keys.length) return [];
   if (!data.length) return new Array(keys.length).fill(null);
 
-  return keys.map(key => {
-    const match = data.filter(d => {
-      if (typeof key === 'object') return matchesObjectFields(d, key);
-      return d[prop] === key;
-    });
+  const map = [];
 
-    if (match && match.length > 1) {
-      throw new Error(`Multiple options in data matching key ${String(key)}`);
+  // Map data with retrievable keys
+  data.forEach(d => {
+    const mapKey = (typeof keys[0] === 'object') ? getMapKey(d, keys[0]) : d[prop];
+
+    if (map[mapKey]) {
+      throw new Error(`Multiple options in data matching key ${String(mapKey)}`);
     }
 
-    return match[0] || null;
+    map[mapKey] = d;
+  });
+
+
+  return keys.map(key => {
+    const mapKey = (typeof key === 'object') ? getMapKey(key, key) : key;
+    return map[mapKey] || null;
   });
 };
 

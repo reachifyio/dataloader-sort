@@ -1,10 +1,11 @@
 {
   "name": "dataloader-sort",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "DataLoader Sort",
   "main": "dist/index.js",
   "scripts": {
     "build": "rm -rf dist && babel src --out-dir dist",
+    "benchmark": "babel-node benchmark.js",
     "test": "mocha --compilers js:babel-core/register",
     "cover": "babel-node ./node_modules/.bin/babel-istanbul cover _mocha -- 'test/*.test.js' --compilers js:babel-register",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls && rm -rf coverage",
@@ -26,7 +27,7 @@
   "license": "MIT",
   "homepage": "https://github.com/reachifyio/dataloader-sort#readme",
   "devDependencies": {
-    "babel-cli": "^6.22.2",
+    "babel-cli": "^6.24.0",
     "babel-core": "^6.22.1",
     "babel-eslint": "^7.1.1",
     "babel-istanbul": "^0.12.2",
@@ -52,6 +53,7 @@
     "tcomb": "^3.2.20"
   },
   "dependencies": {
+    "babel-plugin-loop-optimizer": "^1.2.3",
     "babel-polyfill": "^6.20.0",
     "chai": "^3.5.0",
     "dataloader": "^1.2.0",

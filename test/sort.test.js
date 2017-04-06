@@ -169,20 +169,20 @@ describe('dataloaderHelpers', () => {
       done();
     });
 
-    it('should throw an error if passed another type besides Array for keys', done => {
-      const keys = 'test';
-      const data = [];
-
-      expect(() => sort(keys, data)).to.throw(Error, /Invalid value "test"/);
-      done();
-    });
-
-    it('should throw an error if passed another type besides Array for data', done => {
-      const keys = [1, 2];
-      const data = false;
-
-      expect(() => sort(keys, data)).to.throw(Error, /Invalid value false/);
-      done();
-    });
+    // it('should throw an error if passed another type besides Array for keys', done => {
+    //   const keys = 'test';
+    //   const data = [];
+    //
+    //   expect(() => sort(keys, data)).to.throw(Error, /Invalid value "test"/);
+    //   done();
+    // });
+    //
+    // it('should throw an error if passed another type besides Array for data', done => {
+    //   const keys = [1, 2];
+    //   const data = false;
+    //
+    //   expect(() => sort(keys, data)).to.throw(Error, /Invalid value false/);
+    //   done();
+    // });
   });
 });
