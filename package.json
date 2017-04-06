@@ -1,6 +1,6 @@
 {
   "name": "dataloader-sort",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "DataLoader Sort",
   "main": "dist/index.js",
   "scripts": {

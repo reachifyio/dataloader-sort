@@ -22,7 +22,7 @@ const sort = <Data: { id?: number }>(
     const mapKey = (typeof keys[0] === 'object') ? getMapKey(d, keys[0]) : d[prop];
 
     if (map[mapKey]) {
-      throw new Error(`Multiple options for key ${String(mapKey)}`);
+      throw new Error(`Multiple options in data matching key ${String(mapKey)}`);
     }
 
     map[mapKey] = d;
