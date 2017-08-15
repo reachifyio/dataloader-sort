@@ -7,25 +7,50 @@ const getMapKey = (data : Object, keyObject : Object) : string => {
   return JSON.stringify(filteredData);
 };
 
+type OptionsType = string | {| prop?: string, arrayOutputs?: boolean |};
+
 const sort = (
   keys: (number | string | Object)[],
   data: Object[],
-  prop?: string = 'id',
+  options?: OptionsType = 'id',
 ) : (Object | null)[] => {
+  let prop: string;
+  let arrayOutputs: boolean = false;
+
+  debugger;
+
+  if (typeof options === 'object') {
+    prop = options.prop || 'id';
+    arrayOutputs = options.arrayOutputs || false;
+  } else if (typeof options === 'string') {
+    prop = options;
+  } else {
+    prop = 'id';
+  }
+
   if (!keys.length) return [];
   if (!data.length) return new Array(keys.length).fill(null);
 
+  const areKeysObjects = typeof keys[0] === 'object';
   const map = [];
 
   // Map data with retrievable keys
   data.forEach(d => {
-    const mapKey = (typeof keys[0] === 'object') ? getMapKey(d, keys[0]) : d[prop];
+    const mapKey = areKeysObjects ? getMapKey(d, keys[0]) : d[prop];
 
-    if (map[mapKey]) {
-      throw new Error(`Multiple options in data matching key ${String(mapKey)}`);
+    if (arrayOutputs) {
+      if (!map[mapKey]) {
+        map[mapKey] = [];
+      }
+
+      map[mapKey].push(d);
+    } else {
+      if (map[mapKey]) {
+        throw new Error(`Multiple options in data matching key ${String(mapKey)}`);
+      }
+
+      map[mapKey] = d;
     }
-
-    map[mapKey] = d;
   });
 
 
