@@ -7,7 +7,7 @@
     "build": "rm -rf dist && babel src --out-dir dist",
     "benchmark": "babel-node benchmark.js",
     "test": "mocha --require babel-core/register",
-    "cover": "babel-node ./node_modules/.bin/babel-istanbul cover _mocha -- 'test/*.test.js' --compilers js:babel-register",
+    "cover": "babel-node ./node_modules/.bin/babel-istanbul cover _mocha -- 'test/*.test.js' --register babel-register",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls && rm -rf coverage",
     "lint": "eslint ./src --ext .js",
     "lintfix": "npm run lint -- --fix",
